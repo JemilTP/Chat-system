@@ -7,18 +7,74 @@
     height: 5vh;
     font-family:Arial, Helvetica, sans-serif;
 }
-.Create-Group {
+.Page{
+  
+  width:100%;
+  height:100vh;
+}
+.top{
+  padding:10px;
+}
+.GroupButtonDiv{
+  
+   margin-top: 5px;
+   margin-right: 5px;
+   margin-left: 5px;
+  
+   width: 100%;
+}
+.GroupBtn{
+  display: block;
+  width: 100%;
   background-color: rgb(19, 169, 24);
   color: rgb(0, 0, 0);
-  height:5vh;
+ 
   border: none;
   cursor: pointer;
   opacity: 0.8;
-  position: fixed;
+}
+.GroupDiv{
+  
+  
+  margin-left: 0px;
+  border: 4px solid black;
+  height: 100vh;
+  position: absolute;
+  width: 25%;
+ 
+}
+.message-area{
+  position: absolute;
+  right: 0;
+  border: 4px solid black;
+  
+  width:70%;
+  height: 100vh;
+
+
+}
+.Body{
+  margin-top:30px;
+
+  display: inline-block;
+  height: 100vh;
+  width:100%;
+  
+}
+.Button {
+  background-color: rgb(19, 169, 24);
+  color: rgb(0, 0, 0);
+ 
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  
   
   width: 280px;
 }
-
+.button{
+    display: block;
+}
 /* The popup form - hidden by default */
 .form-popup {
     font-family:Arial, Helvetica, sans-serif;
@@ -72,12 +128,40 @@
 </style>
 </head>
 <body>
-<div class="heading">
+
     <h2>Groups</h2>
+
+<div class="Page">
+    <div class="top">
+        <button class="Button" onclick="openForm()">Create Group</button> 
+    </div> 
+
+
+    <div class="Body" id="Body">
+            <div  class="GroupDiv" id="groups">
+            
+              
+            </div>
+
+            <div class="message-area" id="message-area"></div>
+    </div>
 </div>
+<script>
+    let data = ["meelo", "nigga", "eggs"];
+    let groupDiv = document.getElementById("groups");
+    data.forEach((item) => {
+    var  btn = document.createElement("button");
+    var div = document.createElement("div");
+    btn.innerText = item;
+    div.appendChild(btn);
+    div.className = "GroupButtonDiv";
+    btn.className =  "GroupBtn";
+    groupDiv.appendChild(div);
 
+   // document.getElementById(groups).innerHTML += "<h1>Hello</h1>";
+  });
 
-<button class="Create-Group" onclick="openForm()">Create Group</button>
+</script>
 
 <div class="form-popup" id="myForm">
   <form action="/action_page.php" class="form-container">
@@ -92,11 +176,18 @@
   </form>
 </div>
 
+<div class="manageGroup" id="manageGroup">
+  <form action="/action_page.php" class="form-container">
+    <h1></h1>
+
+    
+  </form>
+</div>
+
 <script>
 function openForm() {
   document.getElementById("myForm").style.display = "flex";
-  //document.getElementById("myForm").style.margin= "auto";
-//  document.getElementById("myForm").style.width= "60%";
+
 }
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
