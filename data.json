@@ -1,0 +1,22 @@
+{
+    "groups":[
+        {
+            "id": 1,
+            "name": "Gaming",
+            "members": [1,2],
+            "chat": []
+        },
+        {
+            "id": 2,
+            "name": "Edu",
+            "members": [],
+            "chat": []
+        },
+        {
+            "id": 3,
+            "name":"Gym",
+            "members": [1,2],
+            "chat": []
+        }
+    ]
+}

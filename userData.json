@@ -1,0 +1,12 @@
+{
+    "users":[
+        {
+    "id": 1,
+    "userName": "Jemil_Pepena",
+    "email": "jpepena5@gmail.com",
+    "password": "675",
+    "role": "SuperAdmin",
+    "Groups": [1,2,3]
+}
+    ]
+}
